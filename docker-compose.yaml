@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+    mailer:
+        build: .
+        volumes:
+            - .:/var/www/html
+            - ./logs/msmtp:/var/log/msmtp
+            - ./config/msmtp/msmtprc:/etc/msmtprc
+        ports:
+            - 8000:80
+
